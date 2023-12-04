@@ -1,0 +1,94 @@
+{
+  "api": {
+    "nextampltol": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDate": "2023-12-11T17:08:14.856Z",
+              "apiKeyExpirationDays": 7,
+              "description": "Next api key tol"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "nextampltol3fb11ac6": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "nampltollambda": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "nampltollamjs": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_nampltollambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nampltollambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_nampltollambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nampltollambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_nampltollamjs_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nampltollamjs"
+        }
+      ]
+    },
+    "AMPLIFY_function_nampltollamjs_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "nampltollamjs"
+        }
+      ]
+    }
+  }
+}
