@@ -34,6 +34,13 @@ export default async function Home() {
   });
   console.log('cookiesClient >>>> data', data)
 
+  const myClick = async () => {
+    const { data, errors } = await cookiesClient.graphql({
+      query: queries.myCustomQuery, variables: {cvData}
+    });
+    console.log('cookiesClient >>>> data', data)
+
+  }
 
   return (
     <div
@@ -46,6 +53,7 @@ export default async function Home() {
     >
       {/* 3. Update the form's action to use the
           new create Todo Server Action*/}
+      <button >Amplify</button>
       <form action={createTodo}>
         <input name="name" placeholder="Add a todo" />
         <button type="submit">Add</button>

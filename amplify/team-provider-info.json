@@ -18,7 +18,7 @@
       "function": {
         "nampltollamjs": {
           "deploymentBucketName": "amplify-nextampltol-dev-190228-deployment",
-          "s3Key": "amplify-builds/nampltollamjs-565a504e477a4e4f7846-build.zip"
+          "s3Key": "amplify-builds/nampltollamjs-71565833437842494f2b-build.zip"
         }
       },
       "auth": {
