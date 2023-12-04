@@ -16,10 +16,6 @@
         "nextampltol": {}
       },
       "function": {
-        "nampltollambda": {
-          "deploymentBucketName": "amplify-nextampltol-dev-190228-deployment",
-          "s3Key": "amplify-builds/nampltollambda-366659726f5a48507875-build.zip"
-        },
         "nampltollamjs": {
           "deploymentBucketName": "amplify-nextampltol-dev-190228-deployment",
           "s3Key": "amplify-builds/nampltollamjs-565a504e477a4e4f7846-build.zip"

@@ -18,13 +18,6 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "nampltollambda": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    },
     "nampltollamjs": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

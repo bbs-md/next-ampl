@@ -46,11 +46,6 @@
     }
   },
   "function": {
-    "nampltollambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
     "nampltollamjs": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -58,22 +53,6 @@
     }
   },
   "parameters": {
-    "AMPLIFY_function_nampltollambda_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "nampltollambda"
-        }
-      ]
-    },
-    "AMPLIFY_function_nampltollambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "nampltollambda"
-        }
-      ]
-    },
     "AMPLIFY_function_nampltollamjs_deploymentBucketName": {
       "usedBy": [
         {
