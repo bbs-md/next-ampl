@@ -9,17 +9,7 @@ import { myCustomQuery } from "@/graphql/queries";
 import { myCustomMutation } from "@/graphql/mutations";
 import { uploadData } from 'aws-amplify/storage';
 
-Amplify.configure({
-    ...config,
-    Auth: {
-        Cognito: {
-            identityPoolId: 'xxx',
-            region: 'xxx',
-            userPoolId: 'xxx',
-            userPoolWebClientId: 'xxx',
-        }        
-      },
-});
+Amplify.configure(config);
 const client = generateClient();
 
 export async function POST(request: NextRequest) {
@@ -64,7 +54,7 @@ export async function POST(request: NextRequest) {
 
     try {
         const result = await uploadData({
-            key: file.name,
+            key: `${file.name}`,
             data: buffer,
         }).result;
         console.log('Succeeded uploadData: ', result);
