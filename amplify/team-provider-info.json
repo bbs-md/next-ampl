@@ -24,10 +24,10 @@
       "auth": {
         "nextampltol3fb11ac6": {}
       },
-      "storage": {
-        "nextampltol8baa4595": {
-          "bucketName": "hr-ses-mail-received-tol",
-          "region": "eu-west-1"
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d12a7rhx0cults",
+          "type": "manual"
         }
       }
     }
