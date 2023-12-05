@@ -14,4 +14,5 @@ input CvData {
   bucketName: String!
   objectKey: String!
   source: String!
+  name: String
 }

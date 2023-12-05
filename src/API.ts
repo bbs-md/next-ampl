@@ -6,6 +6,7 @@ export type CvData = {
   bucketName: string,
   objectKey: string,
   source: string,
+  name?: string | null,
 };
 
 export type MyCustomMutationMutationVariables = {

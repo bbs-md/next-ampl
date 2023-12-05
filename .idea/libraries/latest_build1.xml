@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="latest-build1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/amplify/backend/function/nampltollamjs/dist/latest-build.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

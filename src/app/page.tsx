@@ -29,7 +29,7 @@ async function createTodo(formData: FormData) {
 }
 
 export default async function Home() {
-  const cvData = {bucketName: "bucketName-XXX-XXX", objectKey: "objectKey-YYY-YYYY", source: "alliedtesting.com"}
+  const cvData = {bucketName: "bucketName-XXX-XXX", objectKey: "objectKey-YYY-YYYY", source: "alliedtesting.com", name: "test name"}
   const { data, errors } = await cookiesClient.graphql({
     query: queries.myCustomQuery, variables: {cvData}
   });
