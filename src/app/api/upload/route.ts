@@ -10,6 +10,16 @@ import { myCustomMutation } from "@/graphql/mutations";
 import { uploadData } from 'aws-amplify/storage';
 
 Amplify.configure(config);
+
+Amplify.configure({
+    ...Amplify.getConfig(),
+    Storage: {
+        S3: {
+            region: 'eu-west-1', // (required) - Amazon S3 bucket region
+            bucket: 'hr-ses-mail-received-tol' // (required) - Amazon S3 bucket URI
+        }
+    }
+  });
 const client = generateClient();
 
 export async function POST(request: NextRequest) {
@@ -52,16 +62,16 @@ export async function POST(request: NextRequest) {
         //region: 'eu-west-1',
     });
 
-    // try {
-    //     const result = await uploadData({
-    //         key: `${file.name}`,
-    //         data: buffer,
-    //     }).result;
-    //     console.log('Succeeded uploadData: ', result);
+    try {
+        const result = await uploadData({
+            key: `${file.name}`,
+            data: buffer,
+        }).result;
+        console.log('Succeeded uploadData: ', result);
       
-    //   } catch (error) {
-    //         console.log('uploadData Error : ', error);
-    //   }
+      } catch (error) {
+            console.log('uploadData Error : ', error);
+      }
 
     try {
         const upload = s3.upload(params);
