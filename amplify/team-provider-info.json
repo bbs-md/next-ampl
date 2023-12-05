@@ -23,6 +23,12 @@
       },
       "auth": {
         "nextampltol3fb11ac6": {}
+      },
+      "storage": {
+        "nextampltol8baa4595": {
+          "bucketName": "hr-ses-mail-received-tol",
+          "region": "eu-west-1"
+        }
       }
     }
   }

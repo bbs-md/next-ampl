@@ -7,7 +7,19 @@ import { generateClient } from 'aws-amplify/api';
 import config from '@/amplifyconfiguration.json';
 import { myCustomQuery } from "@/graphql/queries";
 import { myCustomMutation } from "@/graphql/mutations";
-Amplify.configure(config);
+import { uploadData } from 'aws-amplify/storage';
+
+Amplify.configure({
+    ...config,
+    Auth: {
+        Cognito: {
+            identityPoolId: 'xxx',
+            region: 'xxx',
+            userPoolId: 'xxx',
+            userPoolWebClientId: 'xxx',
+        }        
+      },
+});
 const client = generateClient();
 
 export async function POST(request: NextRequest) {
@@ -51,6 +63,17 @@ export async function POST(request: NextRequest) {
     });
 
     try {
+        const result = await uploadData({
+            key: file.name,
+            data: buffer,
+        }).result;
+        console.log('Succeeded uploadData: ', result);
+      
+      } catch (error) {
+            console.log('uploadData Error : ', error);
+      }
+
+    try {
         const upload = s3.upload(params);
         //setUpload(upload);
         upload.on('httpUploadProgress', (p) => {
@@ -58,9 +81,9 @@ export async function POST(request: NextRequest) {
             //progress.set(p.loaded / p.total);
         });
         await upload.promise();
-        console.log(`File uploaded successfully: ${file.name}`);
+        console.log(`s3 File uploaded successfully: ${file.name}`);
     } catch (err) {
-        console.error('Failed to upload file to s3: ', err);
+        console.error('s3 Failed to upload file to s3: ', err);
     }
 
     return NextResponse.json( {success: true})

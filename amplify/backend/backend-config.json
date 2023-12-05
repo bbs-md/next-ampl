@@ -68,6 +68,30 @@
           "resourceName": "nampltollamjs"
         }
       ]
+    },
+    "AMPLIFY_storage_nextampltol8baa4595_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "nextampltol8baa4595"
+        }
+      ]
+    },
+    "AMPLIFY_storage_nextampltol8baa4595_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "nextampltol8baa4595"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "nextampltol8baa4595": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "serviceType": "imported"
     }
   }
 }
