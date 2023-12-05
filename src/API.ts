@@ -9,7 +9,7 @@ export type CvData = {
 };
 
 export type MyCustomMutationMutationVariables = {
-  namet?: string | null,
+  cvData?: CvData | null,
 };
 
 export type MyCustomMutationMutation = {

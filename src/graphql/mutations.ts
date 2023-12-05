@@ -8,8 +8,8 @@ type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationOutput: OutputType;
 };
 
-export const myCustomMutation = /* GraphQL */ `mutation MyCustomMutation($namet: String) {
-  myCustomMutation(namet: $namet)
+export const myCustomMutation = /* GraphQL */ `mutation MyCustomMutation($cvData: CvData) {
+  myCustomMutation(cvData: $cvData)
 }
 ` as GeneratedMutation<
   APITypes.MyCustomMutationMutationVariables,
