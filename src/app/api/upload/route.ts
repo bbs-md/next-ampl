@@ -52,16 +52,16 @@ export async function POST(request: NextRequest) {
         //region: 'eu-west-1',
     //});
 
-    try {
-        const result = await uploadData({
-            key: file.name,
-            data: buffer,
-        }).result;
-        console.log('Succeeded uploadData: ', result);
+    // try {
+    //     const result = await uploadData({
+    //         key: file.name,
+    //         data: buffer,
+    //     }).result;
+    //     console.log('Succeeded uploadData: ', result);
       
-      } catch (error) {
-            console.log('uploadData Error : ', error);
-      }
+    //   } catch (error) {
+    //         console.log('uploadData Error : ', error);
+    //   }
 
     // try {
     //     const upload = s3.upload(params);
