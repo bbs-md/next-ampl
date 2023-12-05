@@ -1,25 +1,25 @@
 import { writeFile } from "fs/promises";
 import { NextRequest, NextResponse } from "next/server";
 import { join } from 'path'
-import { S3} from 'aws-sdk'
+//import { S3} from 'aws-sdk'
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/api';
 import config from '@/amplifyconfiguration.json';
 import { myCustomQuery } from "@/graphql/queries";
 import { myCustomMutation } from "@/graphql/mutations";
-import { uploadData } from 'aws-amplify/storage';
+//import { uploadData } from 'aws-amplify/storage';
 
 Amplify.configure(config);
 
-// Amplify.configure({
-//     ...Amplify.getConfig(),
-//     Storage: {
-//         S3: {
-//             region: 'eu-west-1', // (required) - Amazon S3 bucket region
-//             bucket: 'hr-ses-mail-received-tol' // (required) - Amazon S3 bucket URI
-//         }
-//     }
-//   });
+Amplify.configure({
+    ...Amplify.getConfig(),
+    Storage: {
+        S3: {
+            region: 'eu-west-1', // (required) - Amazon S3 bucket region
+            bucket: 'hr-ses-mail-received-tol' // (required) - Amazon S3 bucket URI
+        }
+    }
+  });
 const client = generateClient();
 
 const bucketName = 'hr-ses-mail-received-tol';
