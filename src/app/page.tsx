@@ -3,6 +3,7 @@ import { cookies } from 'next/headers';
 // 1. Add the following two imports
 import { revalidatePath } from 'next/cache';
 import * as queries from '@/graphql/queries';
+import InputElem from '@/component/input-elem'
 
 import config from '@/amplifyconfiguration.json';
 
@@ -53,11 +54,12 @@ export default async function Home() {
     >
       {/* 3. Update the form's action to use the
           new create Todo Server Action*/}
-      <button >Amplify</button>
-      <form action={createTodo}>
-        <input name="name" placeholder="Add a todo" />
-        <button type="submit">Add</button>
-      </form>
+      
+      {/* <form action={createTodo}> */}
+        {/* <input name="name" placeholder="Add a todo" />
+        <button type="submit">Add</button> */}
+        <InputElem tol={'tol'}>Input el</InputElem>
+      {/* </form> */}
     </div>
   );
 }
